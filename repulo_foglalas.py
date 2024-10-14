@@ -11,7 +11,8 @@ jarat2 = Jarat('FR5674', 'Parizs', '21:00', '3 óra', '56 000 Ft')
 jarat3 = Jarat('MAN8412', 'Manila', '6:00', '15 óra', '128 900 Ft')
 
 class Foglalas:
-    def __init__(self, vezeteknev, keresztnev, cel, jarat):
+    def __init__(self, vezeteknev, keresztnev, jarat):
         self.vezeteknev = vezeteknev
         self.keresztnev = keresztnev
         self.jarat = jarat
+
