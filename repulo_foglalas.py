@@ -1,15 +1,18 @@
 class Jarat:
-    def __init__(self, jaratszam, legitarsasag, celorszag, celvaros, indulasido, repulesido, jegyar):
+    def __init__(self, jaratszam, legitarsasag, celorszag, indulasido, repulesido, jegyar):
         self.jaratszam = jaratszam
+        self.legitarsasag = legitarsasag
         self.celorszag = celorszag
-        self.celvaros = celvaros
-        self.indulas = indulasido
+        self.indulasido = indulasido
         self.repulesido = repulesido
         self.jegyar = jegyar
 
-jarat1 = Jarat('1', 'Malev', 'Magyarorszag', 'Debrecen', '12:00', '1 óra', ' 12 500 Ft')
-jarat2 = Jarat('2', 'FranceAir', 'Franciaorszag', 'Parizs', '21:00', '3 óra', '56 000 Ft')
-jarat3 = Jarat('3', 'PhilipAir', 'Fulop-szigetek', 'Manila', '6:00', '15 óra', '128 900 Ft')
+    def __str__(self):
+        return f'A foglalasok a rendszerben: A(z) {self.jaratszam} jaratszamu gep a(z) {self.legitarsasag} gepe, indul {self.indulasido}-kor.'
+
+jarat1 = Jarat('1', 'Malev', 'Magyarorszag', '12:00', '1 óra', ' 12 500 Ft')
+jarat2 = Jarat('2', 'FranceAir', 'Franciaorszag', '21:00', '3 óra', '56 000 Ft')
+jarat3 = Jarat('3', 'PhilipAir', 'Fulop-szigetek',  '6:00', '15 óra', '128 900 Ft')
 
 class Foglalas:
     def __init__(self, nev, jarat):
@@ -39,5 +42,5 @@ class LegiTarsasag:
     def __init__(self, legitarsasag):
         self.legitarsasag = legitarsasag
 
-print(jarat1)
 
+print(jarat1)
