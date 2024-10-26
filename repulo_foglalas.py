@@ -1,7 +1,7 @@
 from jarat import Jarat
 from belfoldi_jarat import BelfoldiJarat
 from nemzetkozi_jarat import NemzetkoziJarat
-from foglalas import Foglalas
+from foglalas import JegyFoglalas
 from legitarsasag import LegiTarsasag
 from abc import ABC, abstractmethod
 
@@ -10,8 +10,15 @@ def repulo_foglalas():
     legi_tarsasag = LegiTarsasag("Malév")
 
     legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B001", "Magyarország", 10000))
-    legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B002", "Franciaország", 20000))
-    legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B003", "Fülöp-szigetek", 50000))
+    legi_tarsasag.jarat_hozzaadasa(NemzetkoziJarat("N002", "Franciaország", 20000))
+    legi_tarsasag.jarat_hozzaadasa(NemzetkoziJarat("N003", "Fülöp-szigetek", 50000))
+
+    legi_tarsasag.jegy_foglalasa("B001", "Malacka")
+    #legi_tarsasag.jegy_foglalasa("B001", "Füles")
+    #legi_tarsasag.jegy_foglalasa("N001", "Tigirs")
+    #legi_tarsasag.jegy_foglalasa("N001", "Zsebi baba")
+    #legi_tarsasag.jegy_foglalasa("N002", "Nyuszi")
+    #legi_tarsasag.jegy_foglalasa("N002", "Micimackó")
 
     while True:
 
