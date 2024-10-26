@@ -10,15 +10,15 @@ def repulo_foglalas():
     legi_tarsasag = LegiTarsasag("Malév")
 
     legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B001", "Magyarország", 10000))
-    legi_tarsasag.jarat_hozzaadasa(NemzetkoziJarat("N002", "Franciaország", 20000))
-    legi_tarsasag.jarat_hozzaadasa(NemzetkoziJarat("N003", "Fülöp-szigetek", 50000))
+    legi_tarsasag.jarat_hozzaadasa(NemzetkoziJarat("N001", "Franciaország", 20000))
+    legi_tarsasag.jarat_hozzaadasa(NemzetkoziJarat("N002", "Fülöp-szigetek", 50000))
 
     legi_tarsasag.jegy_foglalasa("B001", "Malacka")
-    #legi_tarsasag.jegy_foglalasa("B001", "Füles")
-    #legi_tarsasag.jegy_foglalasa("N001", "Tigirs")
-    #legi_tarsasag.jegy_foglalasa("N001", "Zsebi baba")
-    #legi_tarsasag.jegy_foglalasa("N002", "Nyuszi")
-    #legi_tarsasag.jegy_foglalasa("N002", "Micimackó")
+    legi_tarsasag.jegy_foglalasa("B001", "Füles")
+    legi_tarsasag.jegy_foglalasa("N001", "Tigirs")
+    legi_tarsasag.jegy_foglalasa("N001", "Zsebi baba")
+    legi_tarsasag.jegy_foglalasa("N002", "Nyuszi")
+    legi_tarsasag.jegy_foglalasa("N002", "Micimackó")
 
     while True:
 
@@ -31,14 +31,14 @@ def repulo_foglalas():
 
         if valasztas == "1":
             print("Jegy foglalása")
-            jaratszam = input("Add meg a járatszámot: ")
+            jaratszam = input("\nAdd meg a járatszámot: ")
             utas_nev = input("Add meg az utas nevét: ")
             ar = legi_tarsasag.jegy_foglalasa(jaratszam, utas_nev)
             if ar:
                 print(f"A foglalás jegyára: {ar} Ft")
 
         elif valasztas == "2":
-            jaratszam = input("Add meg a járatszámot: ")
+            jaratszam = input("\nAdd meg a járatszámot: ")
             utas_nev = input("Add meg az utas nevét: ")
             legi_tarsasag.foglalas_lemondasa(jaratszam, utas_nev)
 
