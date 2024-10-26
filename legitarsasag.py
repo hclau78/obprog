@@ -15,31 +15,31 @@ class LegiTarsasag:
         if jarat:
             foglalas = JegyFoglalas(jarat, utas_nev)
             self.foglalasok.append(foglalas)
-            print(f"Sikeres foglalás: {foglalas.foglalas_info()}")
+            print(f"\nSikeres foglalás: {foglalas.foglalas_info()}")
             return foglalas.jegyar()
         else:
-            print("Nincs ilyen járat.")
+            print("\nNincs ilyen járat.")
             return None
 
     def foglalas_lemondasa(self, jaratszam, utas_nev):
         for foglalas in self.foglalasok:
             if foglalas.jarat.jaratszam == jaratszam and foglalas.utas_nev == utas_nev:
                 self.foglalasok.remove(foglalas)
-                print(f"{utas_nev} lemondta a(z) {jaratszam} számú járatra szóló foglalását.")
+                print(f"\n{utas_nev} lemondta a(z) {jaratszam} számú járatra szóló foglalását.")
                 return True
-        print("Nincs ilyen foglalás.")
+        print("\nNincs ilyen foglalás.")
         return False
 
     def foglalasok_listazasa(self):
         if not self.foglalasok:
-            print("Nincsenek aktuális foglalások.")
+            print("\nNincsenek aktuális foglalások.")
         else:
             for foglalas in self.foglalasok:
                 print(foglalas.foglalas_info())
 
     def jaratok_listazasa(self):
         if not self.jaratok:
-            print("Nincsenek járatok.")
+            print("\nNincsenek járatok.")
         else:
             for jarat in self.jaratok:
                 print(jarat.jarat_info())
