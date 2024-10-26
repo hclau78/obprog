@@ -10,15 +10,17 @@ def repulo_foglalas():
     legi_tarsasag = LegiTarsasag("Malév")
 
     legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B001", "Magyarország", 10000))
+    legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B002", "Franciaország", 20000))
+    legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B003", "Fülöp-szigetek", 50000))
 
     while True:
 
-        print("1. Jegy foglalása")
+        print("\n1. Jegy foglalása")
         print("2. Foglalás lemondása")
         print("3. Foglalások listázása")
         print("4. Járatok listázása")
         print("5. Kilépés")
-        valasztas = input("Válassz egy lehetőséget: ")
+        valasztas = input("\nVálassz egy lehetőséget: \n")
 
         if valasztas == "1":
             print("Jegy foglalása")
@@ -34,16 +36,21 @@ def repulo_foglalas():
             legi_tarsasag.foglalas_lemondasa(jaratszam, utas_nev)
 
         elif valasztas == "3":
+            print("\n")
             legi_tarsasag.foglalasok_listazasa()
 
         elif valasztas == "4":
+            print("\n")
             legi_tarsasag.jaratok_listazasa()
+
 
         elif valasztas == "5":
             break
 
         else:
             print("Érvénytelen választás!")
+
+        a = input("\nFolytatáshoz nyomd meg az Entert")
 
 repulo_foglalas()
 
