@@ -31,7 +31,7 @@ def repulo_foglalas():
         valasztas = input("\nVálassz egy lehetőséget: \n")
 
         if valasztas == "1":
-            print("\n Jegy foglalása")
+            print("\nA Jegy foglalása menüpontot választottad.\n")
             jaratszam = input("\nAdd meg a járatszámot: ")
             j = legi_tarsasag.keres_jarat(jaratszam)
             if  j:
@@ -40,26 +40,30 @@ def repulo_foglalas():
                 if ar:
                     print(f"A foglalás jegyára: {ar} Ft")
             else:
-                print("Hibás járat");
+                print("Nincs ilyen járat.");
 
         elif valasztas == "2":
+            print("\nA Jegy foglalás lemondása menüpontot választottad.\n")
             jaratszam = input("\nAdd meg a járatszámot: ")
             j = legi_tarsasag.keres_jarat(jaratszam)
             if  j:
                 utas_nev = input("\nAdd meg az utas nevét: ")
                 legi_tarsasag.foglalas_lemondasa(jaratszam, utas_nev)
             else:
-                print("Hibás járat");
+                print("Nincs ilyen járat.");
 
         elif valasztas == "3":
             print("\n")
+            print("\nA Foglalások listázása menüpontot választottad.\n")
             legi_tarsasag.foglalasok_listazasa()
 
         elif valasztas == "4":
             print("\n")
+            print("\nA Járatok listázása menüpontot választottad.\n")
             legi_tarsasag.jaratok_listazasa()
 
         elif valasztas == "5":
+            print("Kiléptél a programból.")
             break
 
         else:
