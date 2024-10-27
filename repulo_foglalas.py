@@ -7,6 +7,7 @@ from abc import ABC, abstractmethod
 
 
 def repulo_foglalas():
+
     legi_tarsasag = LegiTarsasag("Malév")
 
     legi_tarsasag.jarat_hozzaadasa(BelfoldiJarat("B001", "Magyarország", 10000))
@@ -30,17 +31,25 @@ def repulo_foglalas():
         valasztas = input("\nVálassz egy lehetőséget: \n")
 
         if valasztas == "1":
-            print("Jegy foglalása")
+            print("\n Jegy foglalása")
             jaratszam = input("\nAdd meg a járatszámot: ")
-            utas_nev = input("Add meg az utas nevét: ")
-            ar = legi_tarsasag.jegy_foglalasa(jaratszam, utas_nev)
-            if ar:
-                print(f"A foglalás jegyára: {ar} Ft")
+            j = legi_tarsasag.keres_jarat(jaratszam)
+            if  j:
+                utas_nev = input("\nAdd meg az utas nevét: ")
+                ar = legi_tarsasag.jegy_foglalasa(jaratszam, utas_nev)
+                if ar:
+                    print(f"A foglalás jegyára: {ar} Ft")
+            else:
+                print("Hibás járat");
 
         elif valasztas == "2":
             jaratszam = input("\nAdd meg a járatszámot: ")
-            utas_nev = input("Add meg az utas nevét: ")
-            legi_tarsasag.foglalas_lemondasa(jaratszam, utas_nev)
+            j = legi_tarsasag.keres_jarat(jaratszam)
+            if  j:
+                utas_nev = input("\nAdd meg az utas nevét: ")
+                legi_tarsasag.foglalas_lemondasa(jaratszam, utas_nev)
+            else:
+                print("Hibás járat");
 
         elif valasztas == "3":
             print("\n")
@@ -50,7 +59,6 @@ def repulo_foglalas():
             print("\n")
             legi_tarsasag.jaratok_listazasa()
 
-
         elif valasztas == "5":
             break
 
@@ -59,5 +67,5 @@ def repulo_foglalas():
 
         a = input("\nFolytatáshoz nyomd meg az Entert")
 
-repulo_foglalas()
 
+repulo_foglalas()
