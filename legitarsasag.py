@@ -1,6 +1,7 @@
 from foglalas import JegyFoglalas
 
 
+
 class LegiTarsasag:
     def __init__(self, nev):
         self.nev = nev
@@ -11,7 +12,7 @@ class LegiTarsasag:
         self.jaratok.append(jarat)
 
     def jegy_foglalasa(self, jaratszam, utas_nev):
-        jarat = self._keres_jarat(jaratszam)
+        jarat = self.keres_jarat(jaratszam)
         if jarat:
             foglalas = JegyFoglalas(jarat, utas_nev)
             self.foglalasok.append(foglalas)
@@ -27,8 +28,8 @@ class LegiTarsasag:
                 self.foglalasok.remove(foglalas)
                 print(f"\n{utas_nev} lemondta a(z) {jaratszam} számú járatra szóló foglalását.")
                 return True
-        print("\nNincs ilyen foglalás.")
-        return False
+        print("\nNincs ilyen foglalás")
+        return True
 
     def foglalasok_listazasa(self):
         if not self.foglalasok:
@@ -44,8 +45,10 @@ class LegiTarsasag:
             for jarat in self.jaratok:
                 print(jarat.jarat_info())
 
-    def _keres_jarat(self, jaratszam):
+    def keres_jarat(self, jaratszam):
         for jarat in self.jaratok:
             if jarat.jaratszam == jaratszam:
                 return jarat
         return None
+
+
